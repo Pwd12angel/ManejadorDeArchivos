@@ -5,7 +5,7 @@ import javax.swing.*;
 public class ventana extends JFrame {
 
     public ventana (){
-        this.setSize(800,800);
+        this.setSize(500,700);
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -13,6 +13,9 @@ public class ventana extends JFrame {
         this.setVisible(true);
 
         colocarPanel();
+
+
+
     }
 
     private void colocarPanel(){
