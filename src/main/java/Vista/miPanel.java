@@ -7,10 +7,6 @@ public class miPanel extends JApplet {
     Image imagen;
 
     public miPanel(){
-        JButton enviar;
-        JButton borrar;
-        JButton registrar;
-
         this.setLayout(null);
         this.setBackground(Color.white);
 
@@ -25,6 +21,21 @@ public class miPanel extends JApplet {
     }
 
     private void crearTexto() {
+       // Font myFont2 = new Font("Arial", Font.BOLD, 16);
+
+        //Creamos textos
+        JLabel nombre = new JLabel("Usuario");
+        JLabel password = new JLabel("Password");
+
+        //Le damos propiedades
+        nombre.setBounds(100,100,100,30);
+       // nombre.setFont(myFont2);
+        password.setBounds(100,120,100,30);
+       // password.setFont(myFont2);
+
+        //Lo agregamos
+        this.add(nombre);
+        this.add(password);
     }
 
 
