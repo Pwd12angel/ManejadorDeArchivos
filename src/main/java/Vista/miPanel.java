@@ -21,7 +21,8 @@ public class miPanel extends JApplet {
     }
 
     private void crearTexto() {
-       // Font myFont2 = new Font("Arial", Font.BOLD, 16);
+        //Agregamos nueva fuente
+        Font myFontEtiquetas = new Font("Arial", Font.BOLD, 16);
 
         //Creamos textos
         JLabel nombre = new JLabel("Usuario");
@@ -29,9 +30,9 @@ public class miPanel extends JApplet {
 
         //Le damos propiedades
         nombre.setBounds(100,100,100,30);
-       // nombre.setFont(myFont2);
+        nombre.setFont(myFontEtiquetas);
         password.setBounds(100,120,100,30);
-       // password.setFont(myFont2);
+        password.setFont(myFontEtiquetas);
 
         //Lo agregamos
         this.add(nombre);
@@ -40,6 +41,9 @@ public class miPanel extends JApplet {
 
 
     private void crearBotones() {
+        //Agregamos nueva fuente
+        Font myFontBotones = new Font("Arial", Font.BOLD, 14);
+
         //Creamos el boton
         JButton enviar = new JButton();
         JButton borrar = new JButton();
@@ -48,15 +52,18 @@ public class miPanel extends JApplet {
         //Le damos propiedades
         enviar.setBounds(100,350,100,50);
         enviar.setText("Enviar");
+        enviar.setFont(myFontBotones);
         enviar.setBackground(Color.GRAY);
 
         borrar.setBounds(300,350,100,50);
         borrar.setText("Borrar");
+        borrar.setFont(myFontBotones);
         borrar.setBackground(Color.red);
 
         registrase.setBounds(100,420,300,50);
         registrase.setText("Registrarse");
         registrase.setBackground(Color.white);
+        registrase.setFont(myFontBotones);
 
         //Lo agregamos al panel
         this.add(enviar);
