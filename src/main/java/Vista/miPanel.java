@@ -10,6 +10,7 @@ public class miPanel extends JApplet {
         this.setLayout(null);
         this.setBackground(Color.white);
 
+
         crearBotones();
         crearTexto();
         crearCajita();
@@ -18,6 +19,17 @@ public class miPanel extends JApplet {
     }
 
     private void crearCajita() {
+        //Creamos cajas
+        JTextField cajaNombre = new JTextField();
+        JTextField cajaPass = new JTextField();
+
+        //Damos propiedades
+        cajaNombre.setBounds(100,130,300,40);
+        cajaPass.setBounds(100,230,300,40);
+        //agregamos
+        this.add(cajaNombre);
+        this.add(cajaPass);
+
     }
 
     private void crearTexto() {
@@ -31,7 +43,7 @@ public class miPanel extends JApplet {
         //Le damos propiedades
         nombre.setBounds(100,100,100,30);
         nombre.setFont(myFontEtiquetas);
-        password.setBounds(100,120,100,30);
+        password.setBounds(100,200,100,30);
         password.setFont(myFontEtiquetas);
 
         //Lo agregamos
