@@ -2,20 +2,48 @@ package Vista;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
-public class miPanel extends JApplet {
+public class miPanel extends JPanel {
     Image imagen;
 
+    public static JLabel logo;
+
     public miPanel(){
+
+
         this.setLayout(null);
         this.setBackground(Color.white);
 
-
+        crearEtiqueta();
         crearBotones();
         crearTexto();
         crearCajita();
 
 
+
+    }
+
+
+    private void crearEtiqueta() {
+       logo = new JLabel();
+
+        try {
+            logo.setBounds(180,50,140,140);
+
+            ImageIcon img = new ImageIcon(getClass().getResource("/Vista/Imagenes/login.png"));
+            ImageIcon icon = new ImageIcon(img.getImage().getScaledInstance(logo.getWidth(),logo.getHeight(), Image.SCALE_DEFAULT));
+            logo.setIcon(icon);
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        //Escalamos la imagen a lo ancho y largo de nuestro boton
+        System.out.println(getClass());
+
+
+
+        add(logo);
     }
 
     private void crearCajita() {
@@ -23,9 +51,10 @@ public class miPanel extends JApplet {
         JTextField cajaNombre = new JTextField();
         JTextField cajaPass = new JTextField();
 
+
         //Damos propiedades
-        cajaNombre.setBounds(100,130,300,40);
-        cajaPass.setBounds(100,230,300,40);
+        cajaNombre.setBounds(100,230,300,40);
+        cajaPass.setBounds(100,330,300,40);
         //agregamos
         this.add(cajaNombre);
         this.add(cajaPass);
@@ -36,14 +65,15 @@ public class miPanel extends JApplet {
         //Agregamos nueva fuente
         Font myFontEtiquetas = new Font("Arial", Font.BOLD, 16);
 
+
         //Creamos textos
         JLabel nombre = new JLabel("Usuario");
         JLabel password = new JLabel("Password");
 
         //Le damos propiedades
-        nombre.setBounds(100,100,100,30);
+        nombre.setBounds(100,200,100,30);
         nombre.setFont(myFontEtiquetas);
-        password.setBounds(100,200,100,30);
+        password.setBounds(100,300,100,30);
         password.setFont(myFontEtiquetas);
 
         //Lo agregamos
@@ -62,17 +92,17 @@ public class miPanel extends JApplet {
         JButton registrase = new JButton();
 
         //Le damos propiedades
-        enviar.setBounds(100,350,100,50);
+        enviar.setBounds(100,420,100,50);
         enviar.setText("Enviar");
         enviar.setFont(myFontBotones);
-        enviar.setBackground(Color.GRAY);
+        enviar.setBackground(Color.BLUE);
 
-        borrar.setBounds(300,350,100,50);
+        borrar.setBounds(300,420,100,50);
         borrar.setText("Borrar");
         borrar.setFont(myFontBotones);
         borrar.setBackground(Color.red);
 
-        registrase.setBounds(100,420,300,50);
+        registrase.setBounds(100,490,300,50);
         registrase.setText("Registrarse");
         registrase.setBackground(Color.white);
         registrase.setFont(myFontBotones);
