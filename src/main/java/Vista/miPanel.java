@@ -1,5 +1,7 @@
 package Vista;
 
+import Controlador.AccionBoton;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -8,7 +10,7 @@ public class miPanel extends JPanel {
     Image imagen;
 
     public static JLabel logo;
-
+    public static JButton enviar,borrar,registrarse;
     public miPanel(){
 
 
@@ -21,7 +23,7 @@ public class miPanel extends JPanel {
         crearCajita();
 
 
-
+        AccionBoton instancia = new AccionBoton();
     }
 
 
@@ -87,9 +89,9 @@ public class miPanel extends JPanel {
         Font myFontBotones = new Font("Arial", Font.BOLD, 14);
 
         //Creamos el boton
-        JButton enviar = new JButton();
-        JButton borrar = new JButton();
-        JButton registrase = new JButton();
+         enviar = new JButton();
+         borrar = new JButton();
+         registrarse = new JButton();
 
         //Le damos propiedades
         enviar.setBounds(100,420,100,50);
@@ -102,14 +104,14 @@ public class miPanel extends JPanel {
         borrar.setFont(myFontBotones);
         borrar.setBackground(Color.red);
 
-        registrase.setBounds(100,490,300,50);
-        registrase.setText("Registrarse");
-        registrase.setBackground(Color.white);
-        registrase.setFont(myFontBotones);
+        registrarse.setBounds(100,490,300,50);
+        registrarse.setText("Registrarse");
+        registrarse.setBackground(Color.lightGray);
+        registrarse.setFont(myFontBotones);
 
         //Lo agregamos al panel
         this.add(enviar);
         this.add(borrar);
-        this.add(registrase);
+        this.add(registrarse);
     }
 }
