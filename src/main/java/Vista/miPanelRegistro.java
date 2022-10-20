@@ -8,6 +8,7 @@ import java.awt.*;
 public class miPanelRegistro extends JPanel {
     public static JLabel titulo,usaurio, pass,numeroControl;
     public static JButton regresar,borrar;
+    public static JTextField cajaUsuario,cajaNumero,cajaPass;
     public static 
     //Agregamos nueva fuente
     Font myFontEtiquetas = new Font("Arial", Font.BOLD, 16);
@@ -40,10 +41,10 @@ public class miPanelRegistro extends JPanel {
         usaurio.setBounds(100,125,100,50);
         usaurio.setFont(myFontEtiquetas);
 
-        pass.setBounds(100,250,100,50);
+        pass.setBounds(100,220,100,50);
         pass.setFont(myFontEtiquetas);
 
-        numeroControl.setBounds(500,125,100,50);
+        numeroControl.setBounds(450,125,100,50);
         numeroControl.setFont(myFontEtiquetas);
 
         add(titulo);
@@ -53,7 +54,18 @@ public class miPanelRegistro extends JPanel {
     }
 
     private void crearCajitas() {
+        cajaUsuario = new JTextField();
+        cajaPass = new JTextField();
+        cajaNumero = new JTextField();
 
+        cajaUsuario.setBounds(100,170,200,30);
+        cajaPass.setBounds(100,265,200,30);
+        cajaNumero.setBounds(450,170,200,30);
+
+
+        add(cajaUsuario);
+        add(cajaPass);
+        add(cajaNumero);
     }
 
     private void crearBotones() {
