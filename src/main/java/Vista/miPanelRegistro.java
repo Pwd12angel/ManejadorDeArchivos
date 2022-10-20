@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class miPanelRegistro extends JPanel {
     public static JLabel titulo,usaurio, pass,numeroControl;
-    public static JButton regresar,borrar;
+    public static JButton registro,borrar;
     public static JTextField cajaUsuario,cajaNumero,cajaPass;
     public static 
     //Agregamos nueva fuente
@@ -69,9 +69,19 @@ public class miPanelRegistro extends JPanel {
     }
 
     private void crearBotones() {
-        regresar = new JButton("Regresar");
+        registro = new JButton("Registrar");
+        borrar = new JButton("Borrar");
 
+        registro.setBounds(450,350,150,40);
+        registro.setBorderPainted(false);
+        registro.setBackground(Color.green);
 
+        borrar.setBounds(200,350,150,40);
+        borrar.setBorderPainted(false);
+        borrar.setBackground(Color.GRAY);
+
+        add(registro);
+        add(borrar);
     }
 
 }

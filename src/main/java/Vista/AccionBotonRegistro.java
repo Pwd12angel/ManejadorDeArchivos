@@ -8,19 +8,25 @@ import java.awt.event.ActionListener;
 public class AccionBotonRegistro implements ActionListener {
 
     public AccionBotonRegistro(){
-        miPanelRegistro.regresar.addActionListener(this);
+        miPanelRegistro.registro.addActionListener(this);
+        miPanelRegistro.borrar.addActionListener(this);
+        miPanelRegistro.cajaNumero.addActionListener(this);
+        miPanelRegistro.cajaUsuario.addActionListener(this);
+        miPanelRegistro.cajaPass.addActionListener(this);
+
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == miPanelRegistro.regresar){
-            ventana obj1 = new ventana();
-
-
-            ventanaRegistro instanciaR = new ventanaRegistro(true);
-
+        if (e.getSource() == miPanelRegistro.registro){
+            System.out.println("Boton registro precionado");
         }
 
+        if (e.getSource() == miPanelRegistro.borrar){
+            miPanelRegistro.cajaNumero.setText("");
+            miPanelRegistro.cajaUsuario.setText("");
+            miPanelRegistro.cajaPass.setText("");
+        }
     }
 }
