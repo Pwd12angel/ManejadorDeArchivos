@@ -33,7 +33,7 @@ public class miPanel extends JPanel {
         try {
             logo.setBounds(180,50,140,140);
 
-            ImageIcon img = new ImageIcon(getClass().getResource("/Vista/Imagenes/login.png"));
+            ImageIcon img = new ImageIcon(getClass().getResource("/Vista/Imagenes/login5.png"));
             ImageIcon icon = new ImageIcon(img.getImage().getScaledInstance(logo.getWidth(),logo.getHeight(), Image.SCALE_DEFAULT));
             logo.setIcon(icon);
 
@@ -98,16 +98,19 @@ public class miPanel extends JPanel {
         enviar.setText("Enviar");
         enviar.setFont(myFontBotones);
         enviar.setBackground(Color.BLUE);
+        enviar.setBorderPainted(false);
 
         borrar.setBounds(300,420,100,50);
         borrar.setText("Borrar");
         borrar.setFont(myFontBotones);
         borrar.setBackground(Color.red);
+        borrar.setBorderPainted(false);
 
         registrarse.setBounds(100,490,300,50);
         registrarse.setText("Registrarse");
         registrarse.setBackground(Color.lightGray);
         registrarse.setFont(myFontBotones);
+        registrarse.setBorderPainted(false);
 
         //Lo agregamos al panel
         this.add(enviar);

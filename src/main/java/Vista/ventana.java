@@ -12,15 +12,21 @@ public class ventana extends JFrame {
         this.setTitle("Manejador de archivos");
         this.setVisible(true);
 
-        colocarPanel();
 
+        //Minimizar Ventana
+        //this.setExtendedState(ICONIFIED);
+
+        colocarPanel();
 
 
     }
 
-    private void colocarPanel(){
+    public void colocarPanel(){
         miPanel obj = new miPanel();
         this.setContentPane(obj);
 
     }
+
+
+
 }
