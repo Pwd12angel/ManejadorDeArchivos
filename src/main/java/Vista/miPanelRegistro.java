@@ -1,6 +1,6 @@
 package Vista;
 
-import Controlador.AccionBoton;
+import Controlador.AccionBotonRegistro;
 
 import javax.swing.*;
 import java.awt.*;

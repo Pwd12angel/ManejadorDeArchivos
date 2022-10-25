@@ -1,4 +1,6 @@
-package Vista;
+package Controlador;
+
+import Vista.miPanelRegistro;
 
 import javax.swing.*;
 import java.awt.*;
