@@ -36,6 +36,7 @@ public class AccionBotonRegistro implements ActionListener {
             else {
                 System.out.println("Datos registrados correctamente");
                 String passwordEncriptado = Utilidad.encriptar(pass);
+                System.out.println(passwordEncriptado);
             }
 
         }

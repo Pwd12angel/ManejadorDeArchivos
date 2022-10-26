@@ -51,12 +51,15 @@ public class miPanel extends JPanel {
     private void crearCajita() {
         //Creamos cajas
         JTextField cajaNombre = new JTextField();
-        JTextField cajaPass = new JTextField();
+        JPasswordField cajaPass = new JPasswordField();
 
 
         //Damos propiedades
         cajaNombre.setBounds(100,230,300,40);
         cajaPass.setBounds(100,330,300,40);
+        cajaPass.setEchoChar('*');
+ 
+
         //agregamos
         this.add(cajaNombre);
         this.add(cajaPass);
