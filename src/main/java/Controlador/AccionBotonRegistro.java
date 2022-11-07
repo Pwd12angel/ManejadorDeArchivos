@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.operaciones;
 import Vista.miPanelRegistro;
 
 import javax.swing.*;
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 public class AccionBotonRegistro implements ActionListener {
 
     Utilidad opEncript = new Utilidad();
+    operaciones op = new operaciones();
     public AccionBotonRegistro(){
         miPanelRegistro.registro.addActionListener(this);
         miPanelRegistro.borrar.addActionListener(this);
@@ -27,6 +29,7 @@ public class AccionBotonRegistro implements ActionListener {
 
             String pass = miPanelRegistro.cajaPass.getText();
             String num = miPanelRegistro.cajaNumero.getText();
+            String usurio = miPanelRegistro.cajaUsuario.getText();
 
             if (pass.length() < 8 ){
                 JOptionPane.showMessageDialog(null,"La contraseña"+
@@ -35,10 +38,15 @@ public class AccionBotonRegistro implements ActionListener {
                 JOptionPane.showMessageDialog(null,"El numero de control debe de ser de almenos 8 numeros");
             }
             else {
+
+                int control = Integer.parseInt(num);
+
                 System.out.println("Datos registrados correctamente");
                 String passwordEncriptado = opEncript.encriptar(pass);
                 //String passwordEncriptado = Utilidad.encriptar(pass);
                 System.out.println(passwordEncriptado);
+
+                op.insertar(usurio,control,passwordEncriptado);
             }
 
         }
