@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 public class AccionBotonRegistro implements ActionListener {
 
+    Utilidad opEncript = new Utilidad();
     public AccionBotonRegistro(){
         miPanelRegistro.registro.addActionListener(this);
         miPanelRegistro.borrar.addActionListener(this);
@@ -35,7 +36,8 @@ public class AccionBotonRegistro implements ActionListener {
             }
             else {
                 System.out.println("Datos registrados correctamente");
-                String passwordEncriptado = Utilidad.encriptar(pass);
+                String passwordEncriptado = opEncript.encriptar(pass);
+                //String passwordEncriptado = Utilidad.encriptar(pass);
                 System.out.println(passwordEncriptado);
             }
 
