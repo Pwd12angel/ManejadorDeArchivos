@@ -31,4 +31,33 @@ public class operaciones {
             System.out.println(e);
         }
     }
+    public void consultar (String user){
+        Connection con=conexion.get_connection();
+
+        try {
+            sentencia=con.prepareStatement("SELECT * FROM usuarios WHERE usuario = ?");
+            sentencia.setString(1,user);
+            resultados=sentencia.executeQuery();
+
+            int id , numeroC;
+            String usuario,pass;
+
+            while (resultados.next()){
+                id = resultados.getInt("id");
+                usuario = resultados.getString("usuario");
+                numeroC = resultados.getInt("numeroControl");
+                pass = resultados.getString("contrasena");
+
+                System.out.println("El id es: "+id);
+                System.out.println("El usuario es "+usuario);
+                System.out.println("El numero de control es: "+numeroC);
+                System.out.println("La contrasena es: "+pass);
+
+
+            }
+            con.close();
+        }catch (SQLException e){
+           e.printStackTrace();
+        }
+    }
 }

@@ -2,14 +2,14 @@ package Vista;
 
 import javax.swing.*;
 
-public class ventana extends JFrame {
+public class ventanaDocumento extends JFrame {
 
-    public ventana (){
-        this.setSize(500,700);
+    public ventanaDocumento(){
+        this.setSize(800,800);
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setTitle("Inicio");
+        this.setTitle("Manejador de archivos");
         this.setVisible(true);
 
 
@@ -17,16 +17,10 @@ public class ventana extends JFrame {
         //this.setExtendedState(ICONIFIED);
 
         colocarPanel();
-
-
     }
 
-    public void colocarPanel(){
-        miPanel obj = new miPanel();
-        this.setContentPane(obj);
-
+    private void colocarPanel() {
+        miPanelDocumentos objp = new miPanelDocumentos();
+        this.setContentPane(objp);
     }
-
-
-
 }

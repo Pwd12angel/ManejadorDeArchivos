@@ -11,6 +11,8 @@ public class miPanel extends JPanel {
 
     public static JLabel logo;
     public static JButton enviar,borrar,registrarse;
+    public static  JTextField cajaNombre;
+    public static JPasswordField cajaPass;
     public miPanel(){
 
 
@@ -50,8 +52,8 @@ public class miPanel extends JPanel {
 
     private void crearCajita() {
         //Creamos cajas
-        JTextField cajaNombre = new JTextField();
-        JPasswordField cajaPass = new JPasswordField();
+        cajaNombre = new JTextField();
+        cajaPass = new JPasswordField();
 
 
         //Damos propiedades
