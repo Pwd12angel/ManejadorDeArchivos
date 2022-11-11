@@ -37,12 +37,18 @@ public class AccionBoton implements ActionListener {
             System.out.println(con);
             System.out.println(nom);
 
-            op.consultar(nom);
+
+            op.consultar(nom,con);
+
+
+
 
 
             System.out.println("Boton enviar presionado");
         }else if (e.getSource() == miPanel.borrar){
             System.out.println("Boton borrar presionado");
+            miPanel.cajaNombre.setText("");
+            miPanel.cajaPass.setText("");
         }
 
     }

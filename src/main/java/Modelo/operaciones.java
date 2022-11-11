@@ -1,5 +1,6 @@
 package Modelo;
 
+import Controlador.Utilidad;
 import Vista.miPanelRegistro;
 
 import javax.swing.*;
@@ -9,9 +10,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class operaciones {
+    Utilidad op = new Utilidad();
+
     conexion conexion=new conexion();
     PreparedStatement sentencia=null;
     ResultSet resultados=null;
+
+    int id=0 , numeroC=0;
+    String usuario = null,pass = null;
 
     public void insertar (String usurio, int numeroContol, String pass){
         Connection con = conexion.get_connection();
@@ -31,7 +37,7 @@ public class operaciones {
             System.out.println(e);
         }
     }
-    public void consultar (String user){
+    public void consultar (String user, String passUser){
         Connection con=conexion.get_connection();
 
         try {
@@ -39,8 +45,7 @@ public class operaciones {
             sentencia.setString(1,user);
             resultados=sentencia.executeQuery();
 
-            int id , numeroC;
-            String usuario,pass;
+
 
             while (resultados.next()){
                 id = resultados.getInt("id");
@@ -48,16 +53,27 @@ public class operaciones {
                 numeroC = resultados.getInt("numeroControl");
                 pass = resultados.getString("contrasena");
 
-                System.out.println("El id es: "+id);
-                System.out.println("El usuario es "+usuario);
-                System.out.println("El numero de control es: "+numeroC);
-                System.out.println("La contrasena es: "+pass);
-
-
             }
+
+            //Encriptamos la contraseña
+            String passEncriptValidacion = op.encriptar(passUser);
+
+            //validamos si existe el usuario
+            if (user.equals(usuario) && passEncriptValidacion.equals(pass)){
+                JOptionPane.showMessageDialog(null,"Bienvenido");
+            }else {
+                JOptionPane.showMessageDialog(null,"El usuario o la contraseña son incorrectos");
+            }
+
             con.close();
         }catch (SQLException e){
            e.printStackTrace();
         }
     }
+
+    //retornamos el usuario
+    public String getUsuario() {
+        return usuario;
+    }
+
 }
