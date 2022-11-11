@@ -10,7 +10,7 @@ public class ventanaDocumento extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setTitle("Manejador de archivos");
-        this.setVisible(true);
+        this.setVisible(false);
 
 
         //Minimizar Ventana

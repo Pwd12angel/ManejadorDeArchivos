@@ -19,6 +19,8 @@ public class operaciones {
     int id=0 , numeroC=0;
     String usuario = null,pass = null;
 
+    boolean respuesta;
+
     public void insertar (String usurio, int numeroContol, String pass){
         Connection con = conexion.get_connection();
 
@@ -61,6 +63,7 @@ public class operaciones {
             //validamos si existe el usuario
             if (user.equals(usuario) && passEncriptValidacion.equals(pass)){
                 JOptionPane.showMessageDialog(null,"Bienvenido");
+                respuesta = true;
             }else {
                 JOptionPane.showMessageDialog(null,"El usuario o la contraseña son incorrectos");
             }
@@ -76,4 +79,7 @@ public class operaciones {
         return usuario;
     }
 
+    public boolean entrada(){
+        return respuesta;
+    }
 }

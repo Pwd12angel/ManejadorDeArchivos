@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class miPanelDocumentos extends JPanel {
 
-    public static JTextField prueba;
+    public static JLabel titulo;
     //Agregamos nueva fuente
     Font myFontEtiquetas = new Font("Arial", Font.BOLD, 16);
 
@@ -23,12 +23,13 @@ public class miPanelDocumentos extends JPanel {
     }
 
     private void crearTextos() {
-        prueba = new JTextField();
+        Font tituloD = new Font("Arial", Font.BOLD, 25);
+        titulo = new JLabel("Manejador De Archivos");
 
-        prueba.setText("Bienvenido");
-        prueba.setBounds(300,300,50,10);
+        titulo.setBounds(270,0,400,100);
+        titulo.setFont(tituloD);
 
-        add(prueba);
+        add(titulo);
     }
 
     private void crearCajitas() {

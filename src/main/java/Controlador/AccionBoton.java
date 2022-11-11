@@ -1,10 +1,7 @@
 package Controlador;
 
 import Modelo.operaciones;
-import Vista.miPanel;
-import Vista.miPanelRegistro;
-import Vista.ventana;
-import Vista.ventanaRegistro;
+import Vista.*;
 
 
 import java.awt.event.ActionEvent;
@@ -39,6 +36,13 @@ public class AccionBoton implements ActionListener {
 
 
             op.consultar(nom,con);
+
+            System.out.println(op.entrada());
+
+            if (op.entrada()){
+                ventanaDocumento objD = new ventanaDocumento();
+                objD.setVisible(true);
+            }
 
 
 
