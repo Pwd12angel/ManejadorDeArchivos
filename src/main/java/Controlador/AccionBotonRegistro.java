@@ -25,7 +25,6 @@ public class AccionBotonRegistro implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == miPanelRegistro.registro){
-            System.out.println("Boton registro precionado");
 
             String pass = miPanelRegistro.cajaPass.getText();
             String num = miPanelRegistro.cajaNumero.getText();
