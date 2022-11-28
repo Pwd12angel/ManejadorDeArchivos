@@ -17,9 +17,9 @@ public class conexion {
     //ruta de nuestra BD
     public String url="jdbc:mysql://"+hostname+":"+puerto+"/"+bd+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatatimeCode=false&serverTimezone=UTC";
     //nombre del usuario
-    public String usuario="root";
+    public String usuario="user";
     //contrase�a
-    public String pass="root123";
+    public String pass="pasword";
 
     public Connection get_connection(){
         Connection  conexion = null;
